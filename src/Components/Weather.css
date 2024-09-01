@@ -73,3 +73,33 @@
     width: 26px;
     margin-top: 10px;
 }
+@media (max-width:600px){
+    
+    .weather{
+        height: 500px;
+        width: 300px;
+    }
+    .weather_icon img{
+        max-width: 60%;
+    }
+    .search-bar input{
+        width: 200px;
+        font-size: 15px;
+    }
+    .temperature{
+        font-size: 60px;
+    }
+    .location{
+        font-size: 40px;
+    }
+    .weather-data{
+        position: relative;
+        bottom: 20px;
+    }
+    .weather-data p{
+        font-size: 15px;
+    }
+    .weather-data span{
+        font-size: 16px;
+    }
+}
