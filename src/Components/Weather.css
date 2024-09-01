@@ -1,17 +1,26 @@
+
 .weather{
     place-self: center;
     padding: 20px;
-    border-radius: 10px;
-    background-image: linear-gradient(45deg,#415485,#324d8b);
+    border-radius: 35px;
+    background-image: linear-gradient(45deg,#96a8d6,#556da5);
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 10px 20px rgba(0.5, 0.4, 0.2, 0.2);
+    position: absolute;
 }
 .search-bar{
     display: flex;
     align-items: center;
     gap: 12px;
+
 }
+/* .search-bar input:hover{
+    height: 60px;
+    width: 120%;
+} */
+
 .search-bar input{
     height: 50px;
     border: none;
@@ -21,6 +30,7 @@
     color: #626262;
     background: #ecfffc;
     font-size: 18px;
+    
 }
 .search-bar img{
     width: 50px;

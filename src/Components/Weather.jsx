@@ -41,8 +41,10 @@ function Weather() {
     const search = async (city)=>{
         try{
             const apiKey = process.env.REACT_APP_WEATHER_API;
-            const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+            const url= `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
             const response=await fetch(url)
+            // console.log(response);
+            
             let data=await response.json()
             console.log(data)
             const icon=allIcons[data.weather[0].icon] || clear_icon
@@ -64,18 +66,19 @@ function Weather() {
     
   return (
     <>
+    
         <div className="weather">
             <div className="search-bar">
-                <input type="text" placeholder='Search' name='name' onChange={handleCityName}/>
+                <input onKeyDown={(e)=>{if(e.key==="Enter") handleClick()}} type="text" placeholder='Search your city...' name='name' onChange={handleCityName}/>
                 <img src={search_icon} alt="search image" onClick={handleClick} />
             </div>
 
-            <img src={clear_icon} alt="" className='weather-icon'  />
+            <img src={weatherData.icon} alt="" className='weather-icon'  />
             <p className='temperature'>{weatherData.temperature}°</p>
             <p className='location'>{weatherData.location}</p>
             <div className="weather-data">
                 <div className="col">
-                    <img src={weatherData.icon} alt="" />
+                    <img src={humidity_icon} alt="" />
                     <div>
                         <p>{weatherData.humidity}%</p>
                         <span>Humidity</span>
